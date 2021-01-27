@@ -1,3 +1,4 @@
+/* style from nav bar */
 ul {
   list-style-type: none;
   margin: 0;
@@ -20,6 +21,21 @@ li a, .dropbtn {
 
 li a:hover, .dropdown:hover .dropbtn {
   background-color: #ffe6e6;
+}
+
+/* image style */
+#new_asts{
+  widht:50%;
+}
+
+#new_header{
+  background-color: #ffe6e6;
+  height: 50px;
+}
+
+.new_info_class{
+  height: 100px;
+  border: 1px solid #000
 }
 
 /* hidde the Home URL*/
