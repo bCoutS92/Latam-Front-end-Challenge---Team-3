@@ -1,9 +1,10 @@
-/* hidde the Home URL
-.links:{
-    visibility: hidden;
-}*/
+/* hidde the Home URL*/
+.header:{
+        color: gray;
+        font-family: arial;
+}
 
 /* color mouse over on the href */
-.links{
+.header{
   background-color: #ffe6e6;
 }
