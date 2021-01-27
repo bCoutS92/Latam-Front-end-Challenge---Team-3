@@ -10,16 +10,8 @@ li {
   float: left;
 }
 
-li a, .dropbtn {
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+li a:hover {
+  background-color: #ffe6e6;
 }
 
 /* hidde the Home URL*/
@@ -34,6 +26,6 @@ li a:hover, .dropdown:hover .dropbtn {
 }
 
 /* color from section_mid */
-#section_mid{
+.section_mid{
   background-color: #ffe6e6;
 }
