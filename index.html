@@ -7,7 +7,66 @@
     <link rel="stylesheet" href="https://bcoutinho-xandr.github.io/Latam-Front-end-Challenge---Team-3/style_index.css">
 
         <title>Latam Front-end Challenge - Team 3</title>
-    </head>
+<script async src="//www.googletagservices.com/tag/js/gpt.js"></script>
+        <script async src="//acdn.adnxs.com/prebid/not-for-prod/prebid.js"></script>
+        <script>
+            var sizes = [
+                [300, 250]
+            ];
+            var PREBID_TIMEOUT = 1000;
+
+            var googletag = googletag || {};
+            googletag.cmd = googletag.cmd || [];
+
+            var pbjs = pbjs || {};
+            pbjs.que = pbjs.que || [];
+
+            var adUnits = [{
+                code: '/19968336/header-bid-tag-0',
+                mediaTypes: {
+                    banner: {
+                        sizes: sizes
+                    }
+                },
+                bids: [{
+                    bidder: 'appnexus',
+                    params: {
+                        placementId: 13144370
+                    }
+                }]
+            }];
+
+            pbjs.que.push(function() {
+                pbjs.addAdUnits(adUnits);
+            });
+
+        </script>
+
+        <script>
+            var slot1;
+            googletag.cmd.push(function() {
+                slot1 = googletag.defineSlot('/19968336/header-bid-tag-0', [[300, 250]], 'div-1')
+                	.addService(googletag.pubads());
+                googletag.pubads().disableInitialLoad();
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+            });
+
+            function refreshBid() {
+                pbjs.que.push(function() {
+                    pbjs.requestBids({
+                        timeout: PREBID_TIMEOUT,
+                        adUnitCodes: ['/19968336/header-bid-tag-0'],
+                        bidsBackHandler: function() {
+                            pbjs.setTargetingForGPTAsync(['/19968336/header-bid-tag-0']);
+                            googletag.pubads().refresh([slot1]);
+                        }
+                    });
+                });
+            }
+
+        </script>        
+</head>
     <body><div id="header"><header><div id="qr" style="display:inline-block; align: center;vertical-align: middle;" >
 <a href="https://xandr.com" target="_blank"><img src="https://bcoutinho-xandr.github.io/Latam-Front-end-Challenge---Team-3/xandr_logo.png" width="100" height="75"style="vertical-align:middle;"></a></div>  <div style="display:inline-block;vertical-align: middle;"><h1>Latam Front-end Challenge</h1></div>
 <br>
@@ -30,14 +89,23 @@
 
 <section "section_mid">
 <h2>Xolhas</h2>
-<tr section id="row_new">
-   <td article id="new_asts">First column
+<table><tr section id="row_new">
+   <td article id="new_asts" style="text-align:left">First column
 <div id="new_header"></div>
 <div  div id="new_picture"></div>
 <div  div id="new_info"></div>
    </td>
-   <td  article id="new_art_ads" width="300" height="250">Second column</td>
- </tr>
+   <td  article id="new_art_ads"  width="300" height="250" style="text-align:right">Ad Unit Refresh<button onclick="refreshBid()">Refresh Ad Unit</button>
+        <div id='div-1'>
+            <script type='text/javascript'>
+                googletag.cmd.push(function() {
+                    googletag.display('div-1');
+                });
+
+            </script>
+        </div>
+</td>
+ </tr></table>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer metus purus, tempus at molestie quis, rhoncus sit amet tortor. Maecenas porttitor in ex vel ultrices. Aenean sed sodales leo. Donec aliquam, est et vehicula faucibus, ipsum enim gravida mi, id posuere orci mauris in lorem. Curabitur sit amet velit feugiat mauris pellentesque efficitur et ornare ante. Vestibulum ultrices ex eros, sed pharetra nulla suscipit vitae. Integer tortor dolor, porttitor ut massa eget, aliquam congue dolor. Morbi et scelerisque odio, ac eleifend metus. Proin id pharetra nisi. Curabitur erat eros, semper eu felis non, placerat porttitor sem.</p>
 <p>Sed iaculis efficitur commodo. Cras viverra, dui vel feugiat ultricies, velit massa cursus ipsum, sit amet blandit justo augue ut enim. Fusce quis sapien quis orci scelerisque egestas luctus vel dui. Ut sollicitudin lectus non sem rutrum tempus. Nam a odio nisl. Duis nec nisl sit amet neque feugiat pulvinar. In vel sapien orci. Sed condimentum elit eu velit porttitor, eu pellentesque ipsum venenatis. Cras volutpat magna non arcu porttitor, id ornare mauris faucibus. In eget augue a nibh rutrum vestibulum ac eu dui.</p>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac ipsum eu libero scelerisque sodales at eget lorem. Ut sed mollis eros, quis bibendum nisl. Nulla maximus urna vel nibh suscipit, vel aliquet tortor elementum. Praesent convallis ut est at interdum. Suspendisse fermentum sem quis turpis rhoncus pellentesque. Vestibulum lacinia urna in tellus eleifend, eget consectetur justo pulvinar. Morbi a mauris tristique, blandit dui vitae, pharetra tellus.</p>
