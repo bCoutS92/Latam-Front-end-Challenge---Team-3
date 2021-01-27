@@ -28,6 +28,11 @@ li a:hover, .dropdown:hover .dropbtn {
         font-family: arial;
 }
 
+/* button ad refresh hover */
+button:hover{
+  background-color: #ffe6e6;
+}
+
 /* hide the Home URL*/
 .home{
     visibility: hidden;
