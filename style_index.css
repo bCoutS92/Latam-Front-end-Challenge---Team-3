@@ -1,1 +1,9 @@
+/* hidde the Home URL
+.links:{
+    visibility: hidden;
+}*/
 
+/* color mouse over on the href */
+.links{
+  background-color: #ffe6e6;
+}
