@@ -1,17 +1,13 @@
-var target = document.querySelector('#new_asts');
-
-document.addEventListener('scroll', () => {
-  if (window.scrollY >= target.getBoundingClientRect().top) {
+$(document).on('scroll', function() {
+  if ($(this).scrollTop() >= $('#new_asts').position().top) {
     console.log('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt massa eros, eget efficitur quam ultrices lacinia. Curabitur condimentum dui eu ligula hendrerit, sed imperdiet ipsum dignissim. Suspendisse id gravida tortor. Nunc vestibulum tincidunt lacinia. Pellentesque sagittis turpis at sapien cursus lobortis. Sed bibendum, ex non sagittis ultrices, turpis diam tincidunt eros, ac auctor ante metus sed nisl. Cras cursus lectus risus, vitae ultricies nulla varius in. Curabitur odio enim, mattis sed feugiat nec, lacinia vel urna. Donec imperdiet dapibus auctor. Nullam id mauris fermentum, dapibus tortor rhoncus, tempus augue. Ut consequat magna justo, sed lacinia sapien egestas eu. Fusce felis erat, sollicitudin non egestas nec, maximus faucibus neque. Proin a ipsum et felis iaculis dignissim eu id nisl.
 
 Donec id ante et mi tristique consequat. Praesent sollicitudin suscipit purus a cursus. Vestibulum in dolor lacus. Duis accumsan ante sit amet erat commodo ornare quis id sapien. Integer tristique risus ut interdum ultrices. Sed in ultricies est. Curabitur vehicula lectus nibh, non facilisis orci blandit at. Donec placerat tincidunt leo ac rhoncus. Cras varius ante quis urna scelerisque sodales. Donec quam ante, gravida quis metus et, vehicula tempus odio. Donec efficitur erat nulla. Vestibulum eu libero luctus felis tempor molestie. Nullam pharetra pulvinar erat fringilla tempus.');
   }
 })
 
-var target2 = document.querySelector('#tag_content');
-
-document.addEventListener('scroll', () => {
-  if (window.scrollY >= target.getBoundingClientRect().top) {
+$(document).on('scroll', function() {
+  if ($(this).scrollTop() >= $('#tag_content').position().top) {
     console.log('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt massa eros, eget efficitur quam ultrices lacinia. Curabitur condimentum dui eu ligula hendrerit, sed imperdiet ipsum dignissim. Suspendisse id gravida tortor. Nunc vestibulum tincidunt lacinia. Pellentesque sagittis turpis at sapien cursus lobortis. Sed bibendum, ex non sagittis ultrices, turpis diam tincidunt eros, ac auctor ante metus sed nisl. Cras cursus lectus risus, vitae ultricies nulla varius in. Curabitur odio enim, mattis sed feugiat nec, lacinia vel urna. Donec imperdiet dapibus auctor. Nullam id mauris fermentum, dapibus tortor rhoncus, tempus augue. Ut consequat magna justo, sed lacinia sapien egestas eu. Fusce felis erat, sollicitudin non egestas nec, maximus faucibus neque. Proin a ipsum et felis iaculis dignissim eu id nisl.
 
 Donec id ante et mi tristique consequat. Praesent sollicitudin suscipit purus a cursus. Vestibulum in dolor lacus. Duis accumsan ante sit amet erat commodo ornare quis id sapien. Integer tristique risus ut interdum ultrices. Sed in ultricies est. Curabitur vehicula lectus nibh, non facilisis orci blandit at. Donec placerat tincidunt leo ac rhoncus. Cras varius ante quis urna scelerisque sodales. Donec quam ante, gravida quis metus et, vehicula tempus odio. Donec efficitur erat nulla. Vestibulum eu libero luctus felis tempor molestie. Nullam pharetra pulvinar erat fringilla tempus.
