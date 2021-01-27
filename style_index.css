@@ -1,10 +1,15 @@
 /* hidde the Home URL*/
-.header{
+#header{
         color: gray;
         font-family: arial;
 }
 
+/* hide the Home URL*/
+.home{
+    visibility: hidden;
+}
+
 /* color from section_mid */
-.section_mid{
+#section_mid{
   background-color: #ffe6e6;
 }
