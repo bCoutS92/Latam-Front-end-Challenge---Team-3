@@ -1,3 +1,68 @@
+            var sizes = [
+                [300, 250]
+            ];
+            var PREBID_TIMEOUT = 1000;
+
+            var googletag = googletag || {};
+            googletag.cmd = googletag.cmd || [];
+
+            var pbjs = pbjs || {};
+            pbjs.que = pbjs.que || [];
+
+            var adUnits = [{
+                code: '/19968336/prebid_multiformat_test',
+                mediaTypes: {
+                        banner: {
+                            sizes: sizes
+                        },
+                        native: {
+                            title: {
+                                required: true
+                            },
+                            image: {
+                                required: true
+                            },
+                            sponsoredBy: {
+                                required: true
+                            }
+                        }
+                    },
+                bids: [{
+                    bidder: 'appnexus',
+                    params: {
+                        placementId: 13232392
+                    }
+                }]
+            }];
+
+            pbjs.que.push(function() {
+                pbjs.addAdUnits(adUnits);
+            });
+
+
+            var slot1;
+            googletag.cmd.push(function() {
+                slot1 = googletag.defineSlot('/19968336/prebid_multiformat_test', [[300, 250],[360,360]], 'div-1')
+                	.addService(googletag.pubads());
+                googletag.pubads().disableInitialLoad();
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+            });
+
+            function refreshBid() {
+                pbjs.que.push(function() {
+                    pbjs.requestBids({
+                        timeout: PREBID_TIMEOUT,
+                        adUnitCodes: ['/19968336/prebid_multiformat_test'],
+                        bidsBackHandler: function() {
+                            pbjs.setTargetingForGPTAsync(['/19968336/prebid_multiformat_test']);
+                            googletag.pubads().refresh([slot1]);
+                        }
+                    });
+                });
+            }
+
+
 $(document).on('scroll', function() {
   if ($(this).scrollTop() >= $('#new_asts').position().top) {
     console.log('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt massa eros, eget efficitur quam ultrices lacinia. Curabitur condimentum dui eu ligula hendrerit, sed imperdiet ipsum dignissim. Suspendisse id gravida tortor. Nunc vestibulum tincidunt lacinia. Pellentesque sagittis turpis at sapien cursus lobortis. Sed bibendum, ex non sagittis ultrices, turpis diam tincidunt eros, ac auctor ante metus sed nisl. Cras cursus lectus risus, vitae ultricies nulla varius in. Curabitur odio enim, mattis sed feugiat nec, lacinia vel urna. Donec imperdiet dapibus auctor. Nullam id mauris fermentum, dapibus tortor rhoncus, tempus augue. Ut consequat magna justo, sed lacinia sapien egestas eu. Fusce felis erat, sollicitudin non egestas nec, maximus faucibus neque. Proin a ipsum et felis iaculis dignissim eu id nisl. Donec id ante et mi tristique consequat. Praesent sollicitudin suscipit purus a cursus. Vestibulum in dolor lacus. Duis accumsan ante sit amet erat commodo ornare quis id sapien. Integer tristique risus ut interdum ultrices. Sed in ultricies est. Curabitur vehicula lectus nibh, non facilisis orci blandit at. Donec placerat tincidunt leo ac rhoncus. Cras varius ante quis urna scelerisque sodales. Donec quam ante, gravida quis metus et, vehicula tempus odio. Donec efficitur erat nulla. Vestibulum eu libero luctus felis tempor molestie. Nullam pharetra pulvinar erat fringilla tempus.');
