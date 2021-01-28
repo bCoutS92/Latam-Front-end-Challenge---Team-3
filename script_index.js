@@ -11,7 +11,7 @@ function mouseEvent(e) {
 
   var new_asts = document.getElementById("new_asts");
   var tag_content = document.getElementById("tag_content");
-  var test = document.getElementById("test");
+//var test = document.getElementById("test");
   tag_content.innerHTML = more;
 
   // cross browser addEvent, today you can safely use just addEventListener
@@ -34,7 +34,7 @@ function mouseEvent(e) {
   }
 
   // hook the scroll handler to scroll event
-  addEvent(new_asts,"scroll",scroller);
+  addEvent("scroll",scroller);
 
 
 /*
