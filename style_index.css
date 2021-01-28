@@ -25,15 +25,15 @@ li a:hover, .dropdown:hover .dropbtn {
 
 /* button refresh design */
 .button {
-  padding: 15px 25px;
-  font-size: 24px;
+  padding: 8px 13px;
+  font-size: 12px;
   text-align: center;
   cursor: pointer;
   outline: none;
   color: #fff;
   background-color: #f4511e;
   border: none;
-  border-radius: 15px;
+  border-radius: 7px;
   box-shadow: 0 9px #999;
 }
 
