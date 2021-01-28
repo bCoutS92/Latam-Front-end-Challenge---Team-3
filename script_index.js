@@ -1,4 +1,4 @@
-// Scroll using mouse/keyboard - userScroll becomes true, page load is false
+// 2nd tentative Scroll using mouse/keyboard - userScroll becomes true, page load is false
 var userScroll = false;     
 
 function mouseEvent(e) { 
@@ -37,7 +37,7 @@ function mouseEvent(e) {
   addEvent("scroll",scroller);
 
 
-/*
+/* 1st tentative
 $(document).on('scroll', function() {
  if ($(this).scrollTop() >= $('#new_asts').position().top) {
     console.log('');
