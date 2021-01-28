@@ -15,18 +15,18 @@
   // this is the scroll event handler
   function scroller() {
     // print relevant scroll info
-    tag_content.innerHTML = new_asts.scrollTop+"+"+new_asts.offsetHeight+"+100>"+tag_content.offsetHeight;
+    //tag_content.innerHTML = new_asts.scrollTop+"+"+new_asts.offsetHeight+"+100>"+tag_content.offsetHeight;
 
     // add more contents if user scrolled down enough
     if(new_asts.scrollTop+new_asts.offsetHeight+100>tag_content.offsetHeight) {
       tag_content.innerHTML+= more;
     }
-    console.log('scroll worked fine! See in the end of the page: [WHEN SCROLLED CONTENT HERE]');
 
   }
 
   // hook the scroll handler to scroll event
   addEvent(new_asts,"scroll",scroller);
+  console.log('scroll worked fine! See in the end of the page: [WHEN SCROLLED CONTENT HERE]');
 
 
 /*
