@@ -29,7 +29,14 @@ function mouseEvent(e) {
    if(new_asts.scrollTop+new_asts.offsetHeight+100>tag_content.offsetHeight) {
       tag_content.innerHTML+= more;
       tag_content = [2];
-       
+   }
+  console.log('scroll worked fine! See in the end of the page: [WHEN SCROLLED CONTENT HERE]');
+
+  }
+
+  // hook the scroll handler to scroll event
+  addEvent("scroll",scroller);
+
    //When the scroll is the maximum, the function must add another block id = "row_new" adding a number in each id within the block for example: id = "row_new_1"- All blocks id = "new_art_ads_X" must show advertising!
     var blockId = "<tr section id="row_new">Advertising: <button onclick="refreshBid_1()" class="button">Refresh Ad Unit</button>
         <div id='div-2'>
@@ -41,15 +48,6 @@ function mouseEvent(e) {
             </script>
         </div>";
     document.getElementById("tag_content").innerHTML = blockId;
-       
-   }
-  console.log('scroll worked fine! See in the end of the page: [WHEN SCROLLED CONTENT HERE]');
-
-  }
-
-  // hook the scroll handler to scroll event
-  addEvent("scroll",scroller);
-
 
 /* 1st tentative
 $(document).on('scroll', function() {
