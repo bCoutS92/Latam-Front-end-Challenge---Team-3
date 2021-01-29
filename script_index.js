@@ -42,9 +42,21 @@ function mouseEvent(e) {
     x.style.display = "none";
   }
 
-
   // hook the scroll handler to scroll event
   addEvent("scroll",scroller);
+
+
+// reload after 10 seconds
+function reloadAd(){
+    $('#div-1').load(function () {
+         $(this).unwrap();
+    });
+}
+
+reloadAd(); // This will run on page load
+setInterval(function(){
+    reloadAd() // this will run after every 5 seconds
+}, 10000);
 
 
 /* 1st tentative
