@@ -46,6 +46,31 @@
                         placementId: 13232392
                     }
                 }]
+            },
+            {
+                code: '/19968336/prebid_multiformat_test',
+                mediaTypes: {
+                        banner: {
+                            sizes: sizes
+                        },
+                        native: {
+                            title: {
+                                required: true
+                            },
+                            image: {
+                                required: true
+                            },
+                            sponsoredBy: {
+                                required: true
+                            }
+                        }
+                    },
+                bids: [{
+                    bidder: 'appnexus',
+                    params: {
+                        placementId: 13232392
+                    }
+                }]
             }];
 
             pbjs.que.push(function() {
