@@ -28,7 +28,7 @@ function mouseEvent(e) {
     // add more contents if user scrolled down enough
    if(new_asts.scrollTop+new_asts.offsetHeight+100>tag_content.offsetHeight) {
       tag_content.innerHTML+= more;
-      tag_content = [2];
+      tag_content = [4];
    }
   console.log('scroll worked fine! See in the end of the page: [WHEN SCROLLED CONTENT HERE]');
 
