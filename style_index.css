@@ -66,8 +66,16 @@ li a:hover, .dropdown:hover .dropbtn {
   overflow: auto;
 }
 
-#empty-div {
+/*#empty-div {
   height: 800px;
+}*/
+
+/* row_new_1 */
+#row_new_1 {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  margin-top: 20px;
 }
 
 /* hidde the Home URL*/
