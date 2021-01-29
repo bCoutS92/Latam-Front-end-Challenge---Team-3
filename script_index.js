@@ -47,15 +47,15 @@ function mouseEvent(e) {
 
 
 // reload after 10 seconds
-function reloadAd(){
+function refreshBid(){
     $('#div-1').load(function () {
          $(this).unwrap();
     });
 }
 
-reloadAd(); // This will run on page load
+refreshBid(); // This will run on page load
 setInterval(function(){
-    reloadAd() // this will run after every 5 seconds
+    reloadAd() // this will run after every 10 seconds
 }, 10000);
 
 
