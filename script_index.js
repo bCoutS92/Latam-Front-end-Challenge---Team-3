@@ -34,20 +34,18 @@ function mouseEvent(e) {
 
   }
 
+   //When the scroll is the maximum, the function must add another block id = "row_new" adding a number in each id within the block for example: id = "row_new_1"- All blocks id = "new_art_ads_X" must show advertising!
+  var x = document.getElementById("row_new_1");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+
+
   // hook the scroll handler to scroll event
   addEvent("scroll",scroller);
 
-   //When the scroll is the maximum, the function must add another block id = "row_new" adding a number in each id within the block for example: id = "row_new_1"- All blocks id = "new_art_ads_X" must show advertising!
-    var blockId = "<tr section id="row_new">Advertising: <button onclick="refreshBid_1()" class="button">Refresh Ad Unit</button>
-        <div id='div-2'>
-            <script type='text/javascript'>
-                googletag.cmd.push(function() {
-                    googletag.display('div-2');
-                });
-
-            </script>
-        </div>";
-    document.getElementById("tag_content").innerHTML = blockId;
 
 /* 1st tentative
 $(document).on('scroll', function() {
