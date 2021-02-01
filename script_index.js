@@ -49,8 +49,8 @@ function mouseEvent(e) {
 
 // reload after 10 seconds
 function refreshBid(){
-    $('#div-1').load(function () {
-         $(this).unwrap();
+    ('#div-1').load(function () {
+         (this).unwrap();
     });
 }
 
