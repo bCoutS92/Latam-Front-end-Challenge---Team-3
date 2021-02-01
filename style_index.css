@@ -1,5 +1,5 @@
 /* style from nav bar */
-ul {
+ul .links {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -100,7 +100,7 @@ button:hover{
 }
 
 /* style footer */
-ul {
+ul .footer {
   list-style-type: none;
   margin: 0;
   padding: 0;
