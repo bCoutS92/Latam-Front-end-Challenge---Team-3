@@ -12,8 +12,7 @@ function mouseEvent(e) {
   var new_asts = document.getElementById("new_asts");
   var tag_content = document.getElementById("tag_content");
   var body = document.getElementsByTagName("BODY");
-//var test = document.getElementById("test");
- body.innerHTML = more;
+  body.innerHTML = more;
 
   // cross browser addEvent, today you can safely use just addEventListener
   function addEvent(obj,ev,fn) {
