@@ -1,5 +1,5 @@
 /* style from nav bar */
-ul .links {
+.links ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -7,11 +7,11 @@ ul .links {
   background-color: #333;
 }
 
-li .links{
+.links li{
   float: left;
 }
 
-li a, .dropbtn .links{
+.links li a, .dropbtn{
   display: inline-block;
   color: white;
   text-align: center;
@@ -19,7 +19,7 @@ li a, .dropbtn .links{
   text-decoration: none;
 }
 
-li a:hover, .dropdown:hover .dropbtn .links{
+.links li a:hover, .dropdown:hover .dropbtn{
   background-color: #ffe6e6;
 }
 
@@ -100,7 +100,7 @@ button:hover{
 }
 
 /* style footer */
-ul .footer {
+.footer ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -108,11 +108,11 @@ ul .footer {
   background-color: #f4511e;
 }
 
-li .footer{
+.footer li{
   float: left;
 }
 
-li a .footer{
+.footer li a{
   display: block;
   color: white;
   text-align: center;
