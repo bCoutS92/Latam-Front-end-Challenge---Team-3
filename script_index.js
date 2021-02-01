@@ -40,7 +40,7 @@ function mouseEvent(e) {
   }
 
   // hook the scroll handler to scroll event
-  addEvent(body,"scroll",scroller);
+  addEvent("scroll",scroller);
 
 
 // reload after 10 seconds
