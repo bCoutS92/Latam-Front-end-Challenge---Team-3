@@ -1,3 +1,115 @@
+            var sizes = [
+                [300, 250]
+            ];
+            var PREBID_TIMEOUT = 3000;
+
+            var googletag = googletag || {};
+            googletag.cmd = googletag.cmd || [];
+
+            var pbjs = pbjs || {};
+            pbjs.que = pbjs.que || [];
+
+            var adUnits = [{
+                code: '/19968336/prebid_multiformat_test',
+                mediaTypes: {
+                        banner: {
+                            sizes: sizes
+                        },
+                        native: {
+                            title: {
+                                required: true
+                            },
+                            image: {
+                                required: true
+                            },
+                            sponsoredBy: {
+                                required: true
+                            }
+                        }
+                    },
+                bids: [{
+                    bidder: 'appnexus',
+                    params: {
+                        placementId: 13232392
+                    }
+                }]
+            },
+            {
+                code: '/19968336/header-bid-tag-0',
+                mediaTypes: {
+                        banner: {
+                            sizes: sizes
+                        },
+                        native: {
+                            title: {
+                                required: true
+                            },
+                            image: {
+                                required: true
+                            },
+                            sponsoredBy: {
+                                required: true
+                            }
+                        }
+                    },
+                bids: [{
+                    bidder: 'appnexus',
+                    params: {
+                        placementId: 13232392
+                    }
+                }]
+            }];
+
+            pbjs.que.push(function() {
+                pbjs.addAdUnits(adUnits);
+            });
+
+            var slot1;
+            googletag.cmd.push(function() {
+                slot1 = googletag.defineSlot('/19968336/prebid_multiformat_test', [[300, 250],[360,360]], 'div-1')
+                	.addService(googletag.pubads());
+                googletag.pubads().disableInitialLoad();
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+            });
+            
+                function refreshBid() {
+                pbjs.que.push(function() {
+                    pbjs.requestBids({
+                        timeout: PREBID_TIMEOUT,
+                        adUnitCodes: ['/19968336/prebid_multiformat_test'],
+                        bidsBackHandler: function() {
+                            pbjs.setTargetingForGPTAsync(['/19968336/prebid_multiformat_test']);
+                            googletag.pubads().refresh([slot1]);
+                        }
+                    });
+                });
+            }
+            
+            var slot2;
+            googletag.cmd.push(function() {
+                slot2 = googletag.defineSlot('/19968336/header-bid-tag-0', [[300, 250],[360,360]], 'div-2')
+                	.addService(googletag.pubads());
+                googletag.pubads().disableInitialLoad();
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+            });
+
+            function refreshBid_1() {
+                pbjs.que.push(function() {
+                    pbjs.requestBids({
+                        timeout: PREBID_TIMEOUT,
+                        adUnitCodes: ['/19968336/header-bid-tag-0'],
+                        bidsBackHandler: function() {
+                            pbjs.setTargetingForGPTAsync(['/19968336/header-bid-tag-0']);
+                            googletag.pubads().refresh([slot2]);
+                        }
+                    });
+                });
+            }
+
+
+
 // 2nd tentative Scroll using mouse/keyboard - userScroll becomes true, page load is false
 var userScroll = false;     
 
