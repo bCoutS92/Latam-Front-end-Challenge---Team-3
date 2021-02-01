@@ -11,121 +11,9 @@
         
         <script async src="//www.googletagservices.com/tag/js/gpt.js"></script>
         <script async src="//acdn.adnxs.com/prebid/not-for-prod/prebid.js"></script>
-        <script>
-            var sizes = [
-                [300, 250]
-            ];
-            var PREBID_TIMEOUT = 3000;
+        <script  src="https://bcoutinho-xandr.github.io/Latam-Front-end-Challenge---Team-3/script_index.js"></script>
 
-            var googletag = googletag || {};
-            googletag.cmd = googletag.cmd || [];
-
-            var pbjs = pbjs || {};
-            pbjs.que = pbjs.que || [];
-
-            var adUnits = [{
-                code: '/19968336/prebid_multiformat_test',
-                mediaTypes: {
-                        banner: {
-                            sizes: sizes
-                        },
-                        native: {
-                            title: {
-                                required: true
-                            },
-                            image: {
-                                required: true
-                            },
-                            sponsoredBy: {
-                                required: true
-                            }
-                        }
-                    },
-                bids: [{
-                    bidder: 'appnexus',
-                    params: {
-                        placementId: 13232392
-                    }
-                }]
-            },
-            {
-                code: '/19968336/header-bid-tag-0',
-                mediaTypes: {
-                        banner: {
-                            sizes: sizes
-                        },
-                        native: {
-                            title: {
-                                required: true
-                            },
-                            image: {
-                                required: true
-                            },
-                            sponsoredBy: {
-                                required: true
-                            }
-                        }
-                    },
-                bids: [{
-                    bidder: 'appnexus',
-                    params: {
-                        placementId: 13232392
-                    }
-                }]
-            }];
-
-            pbjs.que.push(function() {
-                pbjs.addAdUnits(adUnits);
-            });
-
-        </script>
-
-        <script>
-            var slot1;
-            googletag.cmd.push(function() {
-                slot1 = googletag.defineSlot('/19968336/prebid_multiformat_test', [[300, 250],[360,360]], 'div-1')
-                	.addService(googletag.pubads());
-                googletag.pubads().disableInitialLoad();
-                googletag.pubads().enableSingleRequest();
-                googletag.enableServices();
-            });
-            
-                function refreshBid() {
-                pbjs.que.push(function() {
-                    pbjs.requestBids({
-                        timeout: PREBID_TIMEOUT,
-                        adUnitCodes: ['/19968336/prebid_multiformat_test'],
-                        bidsBackHandler: function() {
-                            pbjs.setTargetingForGPTAsync(['/19968336/prebid_multiformat_test']);
-                            googletag.pubads().refresh([slot1]);
-                        }
-                    });
-                });
-            }
-            
-            var slot2;
-            googletag.cmd.push(function() {
-                slot2 = googletag.defineSlot('/19968336/header-bid-tag-0', [[300, 250],[360,360]], 'div-2')
-                	.addService(googletag.pubads());
-                googletag.pubads().disableInitialLoad();
-                googletag.pubads().enableSingleRequest();
-                googletag.enableServices();
-            });
-
-            function refreshBid_1() {
-                pbjs.que.push(function() {
-                    pbjs.requestBids({
-                        timeout: PREBID_TIMEOUT,
-                        adUnitCodes: ['/19968336/header-bid-tag-0'],
-                        bidsBackHandler: function() {
-                            pbjs.setTargetingForGPTAsync(['/19968336/header-bid-tag-0']);
-                            googletag.pubads().refresh([slot2]);
-                        }
-                    });
-                });
-            }
-
-        </script>
+        
 </head>
     <body onscroll="scroller()"><div id="header"><header><div id="qr" style="display:inline-block; align: center;vertical-align: middle;" >
 <a href="https://xandr.com" target="_blank"><img src="https://bcoutinho-xandr.github.io/Latam-Front-end-Challenge---Team-3/xandr_logo.png" width="100" height="75"style="vertical-align:middle;"></a></div>  <div style="display:inline-block;vertical-align: middle;"><h1>Latam Front-end Challenge</h1></div>
@@ -194,6 +82,5 @@ Vivamus eu laoreet ligula. Cras pharetra euismod leo. Duis volutpat erat ut sapi
   <li> <a href="mailto:team3@xandr.com">team3@xandr.com</a></li>
 </ul></p>
 </footer>
-    <script  src="https://bcoutinho-xandr.github.io/Latam-Front-end-Challenge---Team-3/script_index.js"></script>
     </body>
 </html>
