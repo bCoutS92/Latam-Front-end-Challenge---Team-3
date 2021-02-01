@@ -11,7 +11,7 @@ function mouseEvent(e) {
 
   var body = document.getElementsByTagName("BODY") [0];
   var tag_content = document.getElementById("tag_content");
-  tag_content.innerHTML = more;
+  body.innerHTML = more;
 
   // cross browser addEvent, today you can safely use just addEventListener
   function addEvent(obj,ev,fn) {
@@ -24,8 +24,7 @@ function mouseEvent(e) {
 
     // add more contents if user scrolled down enough
    if(body.scrollTop+body.offsetHeight+100>tag_content.offsetHeight) {
-      tag_content.innerHTML+= more;
-      tag_content = [4];
+     body.innerHTML+= more;
    }
   console.log('scroll worked fine! See in the end of the page: [WHEN SCROLLED CONTENT HERE]');
 
