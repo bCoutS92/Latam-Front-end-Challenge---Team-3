@@ -11,6 +11,7 @@ function mouseEvent(e) {
 
   var new_asts = document.getElementById("new_asts");
   var tag_content = document.getElementById("tag_content");
+  var body = document.getElementsByTagName("BODY");
 //var test = document.getElementById("test");
   tag_content.innerHTML = more;
 
@@ -26,9 +27,9 @@ function mouseEvent(e) {
     //tag_content.innerHTML = new_asts.scrollTop+"+"+new_asts.offsetHeight+"+100>"+tag_content.offsetHeight;
 
     // add more contents if user scrolled down enough
-   if(new_asts.scrollTop+new_asts.offsetHeight+100>tag_content.offsetHeight) {
-      tag_content.innerHTML+= more;
-      tag_content = [4];
+   if(new_asts.scrollTop+new_asts.offsetHeight+100>body.offsetHeight) {
+      body.innerHTML+= more;
+      body = [4];
    }
   console.log('scroll worked fine! See in the end of the page: [WHEN SCROLLED CONTENT HERE]');
 
@@ -43,7 +44,7 @@ function mouseEvent(e) {
   }
 
   // hook the scroll handler to scroll event
-  addEvent("scroll",scroller);
+  addEvent(body,"scroll",scroller);
 
 
 // reload after 10 seconds
