@@ -13,7 +13,7 @@ function mouseEvent(e) {
   var tag_content = document.getElementById("tag_content");
   var body = document.getElementsByTagName("BODY");
 //var test = document.getElementById("test");
-  tag_content.innerHTML = more;
+ body.innerHTML = more;
 
   // cross browser addEvent, today you can safely use just addEventListener
   function addEvent(obj,ev,fn) {
@@ -23,8 +23,6 @@ function mouseEvent(e) {
 
   // this is the scroll event handler
   function scroller() {
-    // print relevant scroll info
-    //tag_content.innerHTML = new_asts.scrollTop+"+"+new_asts.offsetHeight+"+100>"+tag_content.offsetHeight;
 
     // add more contents if user scrolled down enough
    if(new_asts.scrollTop+new_asts.offsetHeight+100>body.offsetHeight) {
@@ -49,7 +47,7 @@ function mouseEvent(e) {
 
 // reload after 10 seconds
 window.setInterval(refreshBid, 10*1000);
-window.setInterval(refreshBid, 10*1000);
+window.setInterval(refreshBid_1, 10*1000);
 
 
 /* 1st tentative
