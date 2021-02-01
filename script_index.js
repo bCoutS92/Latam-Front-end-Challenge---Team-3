@@ -48,16 +48,8 @@ function mouseEvent(e) {
 
 
 // reload after 10 seconds
-function refreshBid(){
-    ('#div-1').load(function () {
-         (this).unwrap();
-    });
-}
-
-refreshBid(); // This will run on page load
-setInterval(function(){
-    reloadAd() // this will run after every 10 seconds
-}, 10000);
+window.setInterval(refreshBid, 10*1000);
+window.setInterval(refreshBid, 10*1000);
 
 
 /* 1st tentative
