@@ -44,8 +44,8 @@ function mouseEvent(e) {
 
 
 //prebid code
-            var PREBID_TIMEOUT = 1000;
-            var FAILSAFE_TIMEOUT = 3000;
+            var PREBID_TIMEOUT = 3000;
+            var FAILSAFE_TIMEOUT = 6000;
 
             var googletag = googletag || {};
             googletag.cmd = googletag.cmd || [];
