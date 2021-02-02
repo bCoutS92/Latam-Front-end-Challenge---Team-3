@@ -71,7 +71,7 @@ function mouseEvent(e) {
                 code: '/19968336/prebid_multiformat_test',
                 mediaTypes: {
                         banner: {
-                            sizes: [[300, 250],[300, 600]]
+                            sizes: [[300, 250]]
                         },
                         native: {
                             title: {
@@ -96,7 +96,7 @@ function mouseEvent(e) {
                 code: '/19968336/prebid_multiformat_test',
                 mediaTypes: {
                         banner: {
-                            sizes: [[300, 250],[300, 600]]
+                            sizes: [[300, 250]]
                         },
                         native: {
                             title: {
