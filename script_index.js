@@ -156,10 +156,10 @@ function mouseEvent(e) {
 
 
 
-// reload after 10 seconds
+/* reload after 10 seconds
 window.setInterval(refreshBid, 10*1000);
 window.setInterval(refreshBid_1, 10*1000);
-
+*/
 
 /* 1st tentative
 $(document).on('scroll', function() {
