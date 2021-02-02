@@ -47,13 +47,27 @@ function mouseEvent(e) {
          var sizes = [
                 [300, 250]
             ];
-            var PREBID_TIMEOUT = 3000;
+            var PREBID_TIMEOUT = 1000;
+            var FAILSAFE_TIMEOUT = 3000;
 
             var googletag = googletag || {};
             googletag.cmd = googletag.cmd || [];
 
             var pbjs = pbjs || {};
             pbjs.que = pbjs.que || [];
+
+            function initAdserver() {
+                if (pbjs.initAdserverSet) return;
+
+                googletag.cmd.push(function() {
+                    pbjs.que.push(function() {
+                        pbjs.setTargetingForGPTAsync();
+                        googletag.pubads().refresh();
+                    });
+                });
+
+                pbjs.initAdserverSet = true;
+            }
 
             var adUnits = [{
                 code: '/19968336/prebid_multiformat_test',
@@ -109,6 +123,25 @@ function mouseEvent(e) {
             pbjs.que.push(function() {
                 pbjs.addAdUnits(adUnits);
             });
+
+                pbjs.setConfig({
+                    debug: true,
+                    cache: {
+                        url: false
+                    },
+                });
+
+                pbjs.addAdUnits(adUnits);
+                pbjs.requestBids({
+                		timeout: PREBID_TIMEOUT,
+                    bidsBackHandler: function(bidResponses) {
+                        initAdserver();
+                    }
+                });
+            });
+            
+            // in case PBJS doesn't load
+            setTimeout(initAdserver, FAILSAFE_TIMEOUT);
 
             var slot1;
             googletag.cmd.push(function() {
