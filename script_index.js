@@ -44,9 +44,6 @@ function mouseEvent(e) {
 
 
 //prebid code
-         var sizes = [
-                [300, 250]
-            ];
             var PREBID_TIMEOUT = 1000;
             var FAILSAFE_TIMEOUT = 3000;
 
@@ -69,11 +66,12 @@ function mouseEvent(e) {
                 pbjs.initAdserverSet = true;
             }
 
+            pbjs.que.push(function() {
             var adUnits = [{
                 code: '/19968336/prebid_multiformat_test',
                 mediaTypes: {
                         banner: {
-                            sizes: sizes
+                            sizes: [[300, 250],[300, 600]]
                         },
                         native: {
                             title: {
@@ -95,10 +93,10 @@ function mouseEvent(e) {
                 }]
             },
             {
-                code: '/19968336/header-bid-tag-0',
+                code: '/19968336/prebid_multiformat_test',
                 mediaTypes: {
                         banner: {
-                            sizes: sizes
+                            sizes: [[300, 250],[300, 600]]
                         },
                         native: {
                             title: {
@@ -119,10 +117,6 @@ function mouseEvent(e) {
                     }
                 }]
             }];
-
-            pbjs.que.push(function() {
-                pbjs.addAdUnits(adUnits);
-            });
 
                 pbjs.setConfig({
                     debug: true,
@@ -145,7 +139,7 @@ function mouseEvent(e) {
 
             var slot1;
             googletag.cmd.push(function() {
-                slot1 = googletag.defineSlot('/19968336/prebid_multiformat_test', [[300, 250],[360,360]], 'div-1')
+                slot1 = googletag.defineSlot('/19968336/prebid_multiformat_test', [[300, 250],[300,600]], 'div-1')
                 	.addService(googletag.pubads());
                 googletag.pubads().disableInitialLoad();
                 googletag.pubads().enableSingleRequest();
@@ -167,7 +161,7 @@ function mouseEvent(e) {
             
             var slot2;
             googletag.cmd.push(function() {
-                slot2 = googletag.defineSlot('/19968336/header-bid-tag-0', [[300, 250],[360,360]], 'div-2')
+                slot2 = googletag.defineSlot('/19968336/prebid_multiformat_test', [[300, 250],[300,600]], 'div-2')
                 	.addService(googletag.pubads());
                 googletag.pubads().disableInitialLoad();
                 googletag.pubads().enableSingleRequest();
@@ -178,9 +172,9 @@ function mouseEvent(e) {
                 pbjs.que.push(function() {
                     pbjs.requestBids({
                         timeout: PREBID_TIMEOUT,
-                        adUnitCodes: ['/19968336/header-bid-tag-0'],
+                        adUnitCodes: ['/19968336/prebid_multiformat_test'],
                         bidsBackHandler: function() {
-                            pbjs.setTargetingForGPTAsync(['/19968336/header-bid-tag-0']);
+                            pbjs.setTargetingForGPTAsync(['/19968336/prebid_multiformat_test']);
                             googletag.pubads().refresh([slot2]);
                         }
                     });
