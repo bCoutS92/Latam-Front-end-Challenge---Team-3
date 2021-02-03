@@ -150,13 +150,11 @@ function mouseEvent(e) {
 
         // Register event handlers to observe lazy loading behavior.
         googletag.pubads().addEventListener('slotRequested', function(event) {
-          updateSlotStatus(event.slot.getSlotElementId(), 'fetched');
-          console.log('Slot fetched');
+          console.log(event.slot.getSlotElementId(), 'Slot fetched');
         });
 
         googletag.pubads().addEventListener('slotOnload', function(event) {
-          updateSlotStatus(event.slot.getSlotElementId(), 'rendered');
-          console.log('Slot rendered');
+          console.log(event.slot.getSlotElementId(), 'Slot rendered');
         });
 
         googletag.enableServices();
