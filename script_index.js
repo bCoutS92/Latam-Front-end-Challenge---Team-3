@@ -262,8 +262,7 @@ window.setInterval(refreshBid_1, 10*1000);
 
           // Call display() to register the slot as ready and fetch an ad.
           googletag.display(slot);
-        });
-      }
+        }
 
 /* 1st tentative
 $(document).on('scroll', function() {
