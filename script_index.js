@@ -145,6 +145,21 @@ function mouseEvent(e) {
                 googletag.pubads().disableInitialLoad();
                 googletag.pubads().enableSingleRequest();
                 googletag.enableServices();
+                
+                googletag.pubads().enableLazyLoad();
+
+        // Register event handlers to observe lazy loading behavior.
+        googletag.pubads().addEventListener('slotRequested', function(event) {
+          updateSlotStatus(event.slot.getSlotElementId(), 'fetched');
+          console.log('Slot fetched');
+        });
+
+        googletag.pubads().addEventListener('slotOnload', function(event) {
+          updateSlotStatus(event.slot.getSlotElementId(), 'rendered');
+          console.log('Slot rendered');
+        });
+
+        googletag.enableServices();
             });
             
                 function refreshBid() {
@@ -169,6 +184,21 @@ function mouseEvent(e) {
                 googletag.pubads().disableInitialLoad();
                 googletag.pubads().enableSingleRequest();
                 googletag.enableServices();
+                
+                googletag.pubads().enableLazyLoad();
+
+        // Register event handlers to observe lazy loading behavior.
+        googletag.pubads().addEventListener('slotRequested', function(event) {
+          updateSlotStatus(event.slot.getSlotElementId(), 'fetched');
+          console.log('Slot fetched');
+        });
+
+        googletag.pubads().addEventListener('slotOnload', function(event) {
+          updateSlotStatus(event.slot.getSlotElementId(), 'rendered');
+          console.log('Slot rendered');
+        });
+
+        googletag.enableServices();
             });
 
             function refreshBid_1() {
@@ -184,27 +214,6 @@ function mouseEvent(e) {
                 });
             }
 
-        googletag.pubads().enableLazyLoad();
-
-        // Register event handlers to observe lazy loading behavior.
-        googletag.pubads().addEventListener('slotRequested', function(event) {
-          updateSlotStatus(event.slot.getSlotElementId(), 'fetched');
-          console.log('Slot fetched');
-        });
-
-        googletag.pubads().addEventListener('slotOnload', function(event) {
-          updateSlotStatus(event.slot.getSlotElementId(), 'rendered');
-          console.log('Slot rendered');
-        });
-
-        googletag.enableServices();
-      });
-
-      function updateSlotStatus(slotId, state) {
-        var elem = document.getElementById(slotId + '-' + state);
-        elem.className = 'activated';
-        elem.innerText = 'Yes';
-      }
 
 /* reload after 10 seconds
 window.setInterval(refreshBid, 10*1000);
