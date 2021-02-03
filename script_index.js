@@ -140,7 +140,8 @@ function mouseEvent(e) {
             var slot1;
             googletag.cmd.push(function() {
                 slot1 = googletag.defineSlot('/19968336/prebid_multiformat_test', [[300, 250],[300,600]], 'div-1')
-                	.addService(googletag.pubads());
+                	.setTargeting('test', 'lazyload')
+                    .addService(googletag.pubads());
                 googletag.pubads().disableInitialLoad();
                 googletag.pubads().enableSingleRequest();
                 googletag.enableServices();
@@ -158,10 +159,12 @@ function mouseEvent(e) {
                     });
                 });
             }
+
             
             var slot2;
             googletag.cmd.push(function() {
                 slot2 = googletag.defineSlot('/19968336/prebid_multiformat_test', [[300, 250],[300,600]], 'div-2')
+                    .setTargeting('test', 'lazyload')
                 	.addService(googletag.pubads());
                 googletag.pubads().disableInitialLoad();
                 googletag.pubads().enableSingleRequest();
@@ -181,7 +184,27 @@ function mouseEvent(e) {
                 });
             }
 
+        googletag.pubads().enableLazyLoad();
 
+        // Register event handlers to observe lazy loading behavior.
+        googletag.pubads().addEventListener('slotRequested', function(event) {
+          updateSlotStatus(event.slot.getSlotElementId(), 'fetched');
+          console.log('Slot fetched');
+        });
+
+        googletag.pubads().addEventListener('slotOnload', function(event) {
+          updateSlotStatus(event.slot.getSlotElementId(), 'rendered');
+          console.log('Slot rendered');
+        });
+
+        googletag.enableServices();
+      });
+
+      function updateSlotStatus(slotId, state) {
+        var elem = document.getElementById(slotId + '-' + state);
+        elem.className = 'activated';
+        elem.innerText = 'Yes';
+      }
 
 /* reload after 10 seconds
 window.setInterval(refreshBid, 10*1000);
