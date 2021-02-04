@@ -140,9 +140,13 @@ function mouseEvent(e) {
             var slot1;
             googletag.cmd.push(function() {
                 slot1 = googletag.defineSlot('/19968336/prebid_multiformat_test', [[300, 250],[300,600]], 'div-1')
-                    .addService(googletag.pubads());
-                    googletag.pubads().enableSingleRequest();
-                    googletag.pubads().enableLazyLoad();
+                    .setTargeting('test', 'lazyload')
+	                .addService(googletag.pubads());
+	                googletag.pubads().disableInitialLoad();
+	                googletag.pubads().enableSingleRequest();
+	                googletag.enableServices();
+	                
+	                googletag.pubads().enableLazyLoad();
 
                     // Register event handlers to observe lazy loading behavior.
                     googletag.pubads().addEventListener('slotRequested', function(event) {
@@ -173,10 +177,13 @@ function mouseEvent(e) {
             var slot2;
             googletag.cmd.push(function() {
                 slot2 = googletag.defineSlot('/19968336/header-bid-tag-0', [[300, 250],[300,600]], 'div-2')
-                	.addService(googletag.pubads());
-                    googletag.pubads().enableSingleRequest();
-                    googletag.pubads().enableLazyLoad();
-
+                    .setTargeting('test', 'lazyload')
+	                .addService(googletag.pubads());
+	                googletag.pubads().disableInitialLoad();
+	                googletag.pubads().enableSingleRequest();
+	                googletag.enableServices();
+	                
+	                googletag.pubads().enableLazyLoad();
                     // Register event handlers to observe lazy loading behavior.
                     googletag.pubads().addEventListener('slotRequested', function(event) {
                       console.log(event.slot.getSlotElementId([1]), 'Slot fetched');
