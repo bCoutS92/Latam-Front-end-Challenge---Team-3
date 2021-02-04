@@ -187,6 +187,7 @@ function mouseEvent(e) {
                     googletag.pubads().addEventListener('slotOnload', function(event) {
                       console.log(event.slot.getSlotElementId(), 'Slot rendered');
                     });
+		          });
 
 //If the user remains viewing a space for more than 10 seconds, only the space that is being viewed must be refreshed.
 window.setInterval(refreshBid, 10*1000);
