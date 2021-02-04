@@ -136,8 +136,8 @@ function mouseEvent(e) {
 	                .addService(googletag.pubads());
 	                googletag.pubads().disableInitialLoad();
 	                googletag.pubads().enableSingleRequest();	 
-    	                googletag.pubads().enableLazyLoad();
                 	googletag.enableServices();
+			googletag.pubads().enableLazyLoad();
 		    
                 function refreshBid() {
                 pbjs.que.push(function() {
@@ -161,6 +161,7 @@ function mouseEvent(e) {
 	                .addService(googletag.pubads());
 	                googletag.pubads().disableInitialLoad();
 	                googletag.pubads().enableSingleRequest();
+		        googletag.enableServices();
 		        googletag.pubads().enableLazyLoad();
 
 
