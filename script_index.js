@@ -144,10 +144,8 @@ function mouseEvent(e) {
                     .addService(googletag.pubads());
                 googletag.pubads().disableInitialLoad();
                 googletag.pubads().enableSingleRequest();
-                googletag.enableServices();
-                
                 googletag.pubads().enableLazyLoad();
-
+                
         // Register event handlers to observe lazy loading behavior.
         googletag.pubads().addEventListener('slotRequested', function(event) {
           console.log(event.slot.getSlotElementId(), 'Slot fetched');
@@ -181,8 +179,6 @@ function mouseEvent(e) {
                 	.addService(googletag.pubads());
                 googletag.pubads().disableInitialLoad();
                 googletag.pubads().enableSingleRequest();
-                googletag.enableServices();
-                
                 googletag.pubads().enableLazyLoad();
 
         // Register event handlers to observe lazy loading behavior.
@@ -224,8 +220,6 @@ window.setInterval(refreshBid_1, 10*1000);
                     .addService(googletag.pubads());
                 googletag.pubads().disableInitialLoad();
                 googletag.pubads().enableSingleRequest();
-                googletag.enableServices();
-                
                 googletag.pubads().enableLazyLoad();
 
         // Register event handlers to observe lazy loading behavior.
