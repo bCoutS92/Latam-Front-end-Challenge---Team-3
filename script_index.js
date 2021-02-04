@@ -140,18 +140,6 @@ function mouseEvent(e) {
 	                
 	                googletag.pubads().enableLazyLoad();
 
-                    // Register event handlers to observe lazy loading behavior.
-                    googletag.pubads().addEventListener('slotRequested', function(event) {
-                      console.log(event.slot.getSlotElementId([0]), 'Slot fetched');
-                    });
-
-                    googletag.pubads().addEventListener('slotOnload', function(event) {
-                      console.log(event.slot.getSlotElementId([0]), 'Slot rendered');
-                    });
-                 googletag.enableServices();
-
-            });
-            
                 function refreshBid() {
                 pbjs.que.push(function() {
                     pbjs.requestBids({
@@ -176,16 +164,7 @@ function mouseEvent(e) {
 	                googletag.enableServices();
 	                
 	                googletag.pubads().enableLazyLoad();
-                    // Register event handlers to observe lazy loading behavior.
-                    googletag.pubads().addEventListener('slotRequested', function(event) {
-                      console.log(event.slot.getSlotElementId([1]), 'Slot fetched');
-                    });
 
-                    googletag.pubads().addEventListener('slotOnload', function(event) {
-                      console.log(event.slot.getSlotElementId([1]), 'Slot rendered');
-                    });
-                 googletag.enableServices();
-            });
 
             function refreshBid_1() {
                 pbjs.que.push(function() {
@@ -199,6 +178,15 @@ function mouseEvent(e) {
                     });
                 });
             }
+		    
+// Register event handlers to observe lazy loading behavior.
+                    googletag.pubads().addEventListener('slotRequested', function(event) {
+                      console.log(event.slot.getSlotElementId(), 'Slot fetched');
+                    });
+
+                    googletag.pubads().addEventListener('slotOnload', function(event) {
+                      console.log(event.slot.getSlotElementId(), 'Slot rendered');
+                    });
 
 //If the user remains viewing a space for more than 10 seconds, only the space that is being viewed must be refreshed.
 window.setInterval(refreshBid, 10*1000);
