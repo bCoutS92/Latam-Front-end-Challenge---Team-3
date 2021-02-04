@@ -153,6 +153,15 @@ function mouseEvent(e) {
                 });
             }
 
+		    // Register event handlers to observe lazy loading behavior.
+                    googletag.pubads().addEventListener('slotRequested', function(event) {
+                      console.log(event.slot.getSlotElementId(), 'Slot fetched');
+                    });
+
+                    googletag.pubads().addEventListener('slotOnload', function(event) {
+                      console.log(event.slot.getSlotElementId(), 'Slot rendered');
+                    });
+		          });
             
             var slot2;
             googletag.cmd.push(function() {
