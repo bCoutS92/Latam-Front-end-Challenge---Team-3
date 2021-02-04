@@ -136,8 +136,8 @@ function mouseEvent(e) {
 	                .addService(googletag.pubads());
 	                googletag.pubads().disableInitialLoad();
 	                googletag.pubads().enableSingleRequest();	                
-	                googletag.pubads().enableLazyLoad();
-
+                	googletag.enableServices();
+		    
                 function refreshBid() {
                 pbjs.que.push(function() {
                     pbjs.requestBids({
@@ -150,6 +150,7 @@ function mouseEvent(e) {
                     });
                 });
             }
+	                googletag.pubads().enableLazyLoad();
 
 		    // Register event handlers to observe lazy loading behavior.
                     googletag.pubads().addEventListener('slotRequested', function(event) {
@@ -169,7 +170,7 @@ function mouseEvent(e) {
 	                .addService(googletag.pubads());
 	                googletag.pubads().disableInitialLoad();
 	                googletag.pubads().enableSingleRequest();
-	                googletag.pubads().enableLazyLoad();
+		        googletag.enableServices();
 
 
             function refreshBid_1() {
@@ -184,6 +185,9 @@ function mouseEvent(e) {
                     });
                 });
             }
+		    
+		    
+		    	                googletag.pubads().enableLazyLoad();
 		    
 // Register event handlers to observe lazy loading behavior.
                     googletag.pubads().addEventListener('slotRequested', function(event) {
