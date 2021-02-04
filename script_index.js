@@ -74,16 +74,8 @@ function mouseEvent(e) {
                             sizes: [[300, 250]]
                         },
                         native: {
-                            title: {
-                                required: true
+                                type: 'image'
                             },
-                            image: {
-                                required: true
-                            },
-                            sponsoredBy: {
-                                required: true
-                            }
-                        }
                     },
                 bids: [{
                     bidder: 'appnexus',
@@ -166,7 +158,7 @@ function mouseEvent(e) {
                         timeout: PREBID_TIMEOUT,
                         adUnitCodes: ['div-1'],
                         bidsBackHandler: function() {
-                            pbjs.setTargetingForGPTAsync(['div-1']);
+                            pbjs.setTargetingForGPTAsync(['/19968336/prebid_multiformat_test']);
                             googletag.pubads().refresh([slot1]);
                         }
                     });
@@ -201,7 +193,7 @@ function mouseEvent(e) {
                         timeout: PREBID_TIMEOUT,
                         adUnitCodes: ['div-2'],
                         bidsBackHandler: function() {
-                            pbjs.setTargetingForGPTAsync(['div-2']);
+                            pbjs.setTargetingForGPTAsync(['/19968336/header-bid-tag-0']);
                             googletag.pubads().refresh([slot2]);
                         }
                     });
