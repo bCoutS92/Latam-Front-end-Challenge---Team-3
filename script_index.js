@@ -132,12 +132,10 @@ function mouseEvent(e) {
             var slot1;
             googletag.cmd.push(function() {
                 slot1 = googletag.defineSlot('/19968336/prebid_multiformat_test', [[300, 250],[300,600]], 'div-1')
-                    .setTargeting('test', 'lazyload')
+                    	.setTargeting('test', 'lazyload')
 	                .addService(googletag.pubads());
 	                googletag.pubads().disableInitialLoad();
-	                googletag.pubads().enableSingleRequest();
-	                googletag.enableServices();
-	                
+	                googletag.pubads().enableSingleRequest();	                
 	                googletag.pubads().enableLazyLoad();
 
                 function refreshBid() {
@@ -161,7 +159,8 @@ function mouseEvent(e) {
                     googletag.pubads().addEventListener('slotOnload', function(event) {
                       console.log(event.slot.getSlotElementId(), 'Slot rendered');
                     });
-		          });
+	googletag.enableServices();
+	});
             
             var slot2;
             googletag.cmd.push(function() {
@@ -170,8 +169,6 @@ function mouseEvent(e) {
 	                .addService(googletag.pubads());
 	                googletag.pubads().disableInitialLoad();
 	                googletag.pubads().enableSingleRequest();
-	                googletag.enableServices();
-	                
 	                googletag.pubads().enableLazyLoad();
 
 
@@ -196,7 +193,9 @@ function mouseEvent(e) {
                     googletag.pubads().addEventListener('slotOnload', function(event) {
                       console.log(event.slot.getSlotElementId(), 'Slot rendered');
                     });
-		          });
+		    
+        googletag.enableServices();		    
+	});
 
 //If the user remains viewing a space for more than 10 seconds, only the space that is being viewed must be refreshed.
 window.setInterval(refreshBid, 10*1000);
