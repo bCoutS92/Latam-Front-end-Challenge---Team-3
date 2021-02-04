@@ -137,7 +137,6 @@ function mouseEvent(e) {
 	                googletag.pubads().disableInitialLoad();
 	                googletag.pubads().enableSingleRequest();	 
                 	googletag.enableServices();
-			googletag.pubads().enableLazyLoad();
 		    
                 function refreshBid() {
                 pbjs.que.push(function() {
@@ -152,6 +151,9 @@ function mouseEvent(e) {
                 });
             }
 });
+
+			googletag.pubads().enableLazyLoad();
+
 		    
 		    
             var slot2;
@@ -162,7 +164,6 @@ function mouseEvent(e) {
 	                googletag.pubads().disableInitialLoad();
 	                googletag.pubads().enableSingleRequest();
 		        googletag.enableServices();
-		        googletag.pubads().enableLazyLoad();
 
 
             function refreshBid_1() {
@@ -178,7 +179,8 @@ function mouseEvent(e) {
                 });
             }
 		    
-		    
+   		        googletag.pubads().enableLazyLoad();
+
 		    	                
 		    
 // Register event handlers to observe lazy loading behavior.
