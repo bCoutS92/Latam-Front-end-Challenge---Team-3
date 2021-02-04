@@ -144,6 +144,7 @@ function mouseEvent(e) {
                     .addService(googletag.pubads());
                 googletag.pubads().disableInitialLoad();
                 googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
                 googletag.pubads().enableLazyLoad();
 
                     // Register event handlers to observe lazy loading behavior.
@@ -179,6 +180,7 @@ function mouseEvent(e) {
                 	.addService(googletag.pubads());
                 googletag.pubads().disableInitialLoad();
                 googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
                 googletag.pubads().enableLazyLoad();
 
                     // Register event handlers to observe lazy loading behavior.
@@ -205,6 +207,6 @@ function mouseEvent(e) {
                 });
             }
 
-
+//If the user remains viewing a space for more than 10 seconds, only the space that is being viewed must be refreshed.
 window.setInterval(refreshBid, 10*1000);
 window.setInterval(refreshBid_1, 10*1000);
