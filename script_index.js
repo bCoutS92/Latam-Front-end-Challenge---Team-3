@@ -135,7 +135,8 @@ function mouseEvent(e) {
                     	.setTargeting('test', 'lazyload')
 	                .addService(googletag.pubads());
 	                googletag.pubads().disableInitialLoad();
-	                googletag.pubads().enableSingleRequest();	                
+	                googletag.pubads().enableSingleRequest();	 
+    	                googletag.pubads().enableLazyLoad();
                 	googletag.enableServices();
 		    
                 function refreshBid() {
@@ -150,19 +151,9 @@ function mouseEvent(e) {
                     });
                 });
             }
-	                googletag.pubads().enableLazyLoad();
 
-		    // Register event handlers to observe lazy loading behavior.
-                    googletag.pubads().addEventListener('slotRequested', function(event) {
-                      console.log(event.slot.getSlotElementId(), 'Slot fetched');
-                    });
-
-                    googletag.pubads().addEventListener('slotOnload', function(event) {
-                      console.log(event.slot.getSlotElementId(), 'Slot rendered');
-                    });
-	googletag.enableServices();
-	});
-            
+		    
+		    
             var slot2;
             googletag.cmd.push(function() {
                 slot2 = googletag.defineSlot('/19968336/header-bid-tag-0', [[300, 250],[300,600]], 'div-2')
@@ -170,7 +161,7 @@ function mouseEvent(e) {
 	                .addService(googletag.pubads());
 	                googletag.pubads().disableInitialLoad();
 	                googletag.pubads().enableSingleRequest();
-		        googletag.enableServices();
+		        googletag.pubads().enableLazyLoad();
 
 
             function refreshBid_1() {
@@ -187,7 +178,7 @@ function mouseEvent(e) {
             }
 		    
 		    
-		    	                googletag.pubads().enableLazyLoad();
+		    	                
 		    
 // Register event handlers to observe lazy loading behavior.
                     googletag.pubads().addEventListener('slotRequested', function(event) {
