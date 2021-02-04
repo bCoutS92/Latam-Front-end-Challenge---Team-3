@@ -145,7 +145,6 @@ function mouseEvent(e) {
                 googletag.pubads().disableInitialLoad();
                 googletag.pubads().enableSingleRequest();
                 googletag.pubads().enableLazyLoad();
-                googletag.enableServices();
 
                     // Register event handlers to observe lazy loading behavior.
                     googletag.pubads().addEventListener('slotRequested', function(event) {
@@ -155,6 +154,7 @@ function mouseEvent(e) {
                     googletag.pubads().addEventListener('slotOnload', function(event) {
                       console.log(event.slot.getSlotElementId(), 'Slot rendered');
                     });
+                 googletag.enableServices();
 
             });
             
@@ -180,7 +180,6 @@ function mouseEvent(e) {
                 googletag.pubads().disableInitialLoad();
                 googletag.pubads().enableSingleRequest();
                 googletag.pubads().enableLazyLoad();
-                googletag.enableServices();
 
                     // Register event handlers to observe lazy loading behavior.
                     googletag.pubads().addEventListener('slotRequested', function(event) {
@@ -190,6 +189,7 @@ function mouseEvent(e) {
                     googletag.pubads().addEventListener('slotOnload', function(event) {
                       console.log(event.slot.getSlotElementId(), 'Slot rendered');
                     });
+                 googletag.enableServices();
             });
 
             function refreshBid_1() {
