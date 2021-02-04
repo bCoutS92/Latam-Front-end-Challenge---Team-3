@@ -129,71 +129,82 @@ function mouseEvent(e) {
             // in case PBJS doesn't load
             setTimeout(initAdserver, FAILSAFE_TIMEOUT);
 
-            var slot1;
-            googletag.cmd.push(function() {
-                slot1 = googletag.defineSlot('/19968336/prebid_multiformat_test', [[300, 250],[300,600]], 'div-1')
-                    	.setTargeting('test', 'lazyload')
-	                .addService(googletag.pubads());
-	                googletag.pubads().disableInitialLoad();
-	                googletag.pubads().enableSingleRequest();	 
-                	googletag.enableServices();
-		    
-                function refreshBid() {
-                pbjs.que.push(function() {
-                    pbjs.requestBids({
-                        timeout: PREBID_TIMEOUT,
-                        adUnitCodes: ['div-1'],
-                        bidsBackHandler: function() {
-                            pbjs.setTargetingForGPTAsync(['/19968336/prebid_multiformat_test']);
-                            googletag.pubads().refresh([slot1]);
-                        }
-                    });
-                });
-            }
-});
-
-			googletag.pubads().enableLazyLoad();
-
-		    
-		    
-            var slot2;
-            googletag.cmd.push(function() {
-                slot2 = googletag.defineSlot('/19968336/header-bid-tag-0', [[300, 250],[300,600]], 'div-2')
-                    .setTargeting('test', 'lazyload')
-	                .addService(googletag.pubads());
+	            var slot1;
+	            googletag.cmd.push(function() {
+	                slot1 = googletag.defineSlot('/19968336/prebid_multiformat_test', [[300, 250],[300,600]], 'div-1')
+	                	.setTargeting('test', 'lazyload')
+	                    .addService(googletag.pubads());
 	                googletag.pubads().disableInitialLoad();
 	                googletag.pubads().enableSingleRequest();
-		        googletag.enableServices();
-
-
-            function refreshBid_1() {
-                pbjs.que.push(function() {
-                    pbjs.requestBids({
-                        timeout: PREBID_TIMEOUT,
-                        adUnitCodes: ['div-2'],
-                        bidsBackHandler: function() {
-                            pbjs.setTargetingForGPTAsync(['/19968336/header-bid-tag-0']);
-                            googletag.pubads().refresh([slot2]);
-                        }
-                    });
-                });
-            }
-		    
-   		        googletag.pubads().enableLazyLoad();
-
-		    	                
-		    
-// Register event handlers to observe lazy loading behavior.
-                    googletag.pubads().addEventListener('slotRequested', function(event) {
-                      console.log(event.slot.getSlotElementId(), 'Slot fetched');
-                    });
-
-                    googletag.pubads().addEventListener('slotOnload', function(event) {
-                      console.log(event.slot.getSlotElementId(), 'Slot rendered');
-                    });
-		    
-        googletag.enableServices();		    
-	});
+	                googletag.enableServices();
+	                
+	                googletag.pubads().enableLazyLoad();
+	
+	        // Register event handlers to observe lazy loading behavior.
+	        googletag.pubads().addEventListener('slotRequested', function(event) {
+	          console.log(event.slot.getSlotElementId(), 'Slot fetched');
+	        });
+	
+	        googletag.pubads().addEventListener('slotOnload', function(event) {
+	          console.log(event.slot.getSlotElementId(), 'Slot rendered');
+	        });
+	
+	        googletag.enableServices();
+	            });
+	            
+	                function refreshBid() {
+	                pbjs.que.push(function() {
+	                    pbjs.requestBids({
+	                        timeout: PREBID_TIMEOUT,
+	                        adUnitCodes: ['/19968336/prebid_multiformat_test'],
+	                        bidsBackHandler: function() {
+	                            pbjs.setTargetingForGPTAsync(['/19968336/prebid_multiformat_test']);
+	                            googletag.pubads().refresh([slot1]);
+	                        }
+	                    });
+	                });
+	            }
+	
+	
+	            
+	
+	
+	
+	            var slot2;
+	            googletag.cmd.push(function() {
+	                slot2 = googletag.defineSlot('/19968336/header-bid-tag-0', [[300, 250],[300,600]], 'div-2')
+	                    .setTargeting('test', 'lazyload')
+	                	.addService(googletag.pubads());
+	                googletag.pubads().disableInitialLoad();
+	                googletag.pubads().enableSingleRequest();
+	                googletag.enableServices();
+	                
+	                googletag.pubads().enableLazyLoad();
+	
+	        // Register event handlers to observe lazy loading behavior.
+	        googletag.pubads().addEventListener('slotRequested', function(event) {
+	          console.log(event.slot.getSlotElementId(), 'Slot fetched');
+	        });
+	
+	        googletag.pubads().addEventListener('slotOnload', function(event) {
+	          console.log(event.slot.getSlotElementId(), 'Slot rendered');
+	        });
+	
+	        googletag.enableServices();
+	            });
+	
+	            function refreshBid_1() {
+	                pbjs.que.push(function() {
+	                    pbjs.requestBids({
+	                        timeout: PREBID_TIMEOUT,
+	                        adUnitCodes: ['/19968336/header-bid-tag-0'],
+	                        bidsBackHandler: function() {
+	                            pbjs.setTargetingForGPTAsync(['/19968336/header-bid-tag-0']);
+	                            googletag.pubads().refresh([slot2]);
+	                        }
+	                    });
+	                });
+	            }
 
 //If the user remains viewing a space for more than 10 seconds, only the space that is being viewed must be refreshed.
 window.setInterval(refreshBid, 10*1000);
