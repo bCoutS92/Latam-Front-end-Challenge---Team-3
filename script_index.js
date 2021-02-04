@@ -68,7 +68,7 @@ function mouseEvent(e) {
 
             pbjs.que.push(function() {
             var adUnits = [{
-                code: '/19968336/prebid_multiformat_test',
+                code: 'div-1',
                 mediaTypes: {
                         banner: {
                             sizes: [[300, 250]]
@@ -93,7 +93,7 @@ function mouseEvent(e) {
                 }]
             },
             {
-                code: '/19968336/header-bid-tag-0',
+                code: 'div-2',
                 mediaTypes: {
                         banner: {
                             sizes: [[300, 250]]
@@ -140,12 +140,9 @@ function mouseEvent(e) {
             var slot1;
             googletag.cmd.push(function() {
                 slot1 = googletag.defineSlot('/19968336/prebid_multiformat_test', [[300, 250],[300,600]], 'div-1')
-                	.setTargeting('test', 'lazyload', "infinitescroll")
                     .addService(googletag.pubads());
-                googletag.pubads().disableInitialLoad();
-                googletag.pubads().enableSingleRequest();
-                googletag.enableServices();
-                googletag.pubads().enableLazyLoad();
+                    googletag.pubads().enableSingleRequest();
+                    googletag.pubads().enableLazyLoad();
 
                     // Register event handlers to observe lazy loading behavior.
                     googletag.pubads().addEventListener('slotRequested', function(event) {
@@ -163,9 +160,9 @@ function mouseEvent(e) {
                 pbjs.que.push(function() {
                     pbjs.requestBids({
                         timeout: PREBID_TIMEOUT,
-                        adUnitCodes: ['/19968336/prebid_multiformat_test'],
+                        adUnitCodes: ['div-1'],
                         bidsBackHandler: function() {
-                            pbjs.setTargetingForGPTAsync(['/19968336/prebid_multiformat_test']);
+                            pbjs.setTargetingForGPTAsync(['div-1']);
                             googletag.pubads().refresh([slot1]);
                         }
                     });
@@ -176,12 +173,9 @@ function mouseEvent(e) {
             var slot2;
             googletag.cmd.push(function() {
                 slot2 = googletag.defineSlot('/19968336/header-bid-tag-0', [[300, 250],[300,600]], 'div-2')
-                    .setTargeting('test', 'lazyload', "infinitescroll")
                 	.addService(googletag.pubads());
-                googletag.pubads().disableInitialLoad();
-                googletag.pubads().enableSingleRequest();
-                googletag.enableServices();
-                googletag.pubads().enableLazyLoad();
+                    googletag.pubads().enableSingleRequest();
+                    googletag.pubads().enableLazyLoad();
 
                     // Register event handlers to observe lazy loading behavior.
                     googletag.pubads().addEventListener('slotRequested', function(event) {
@@ -198,9 +192,9 @@ function mouseEvent(e) {
                 pbjs.que.push(function() {
                     pbjs.requestBids({
                         timeout: PREBID_TIMEOUT,
-                        adUnitCodes: ['/19968336/header-bid-tag-0'],
+                        adUnitCodes: ['div-2'],
                         bidsBackHandler: function() {
-                            pbjs.setTargetingForGPTAsync(['/19968336/header-bid-tag-0']);
+                            pbjs.setTargetingForGPTAsync(['div-2']);
                             googletag.pubads().refresh([slot2]);
                         }
                     });
