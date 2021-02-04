@@ -151,7 +151,7 @@ function mouseEvent(e) {
                     });
                 });
             }
-
+});
 		    
 		    
             var slot2;
